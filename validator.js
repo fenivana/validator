@@ -1,5 +1,5 @@
 /*!
- * validator.js v1.2
+ * validator.js v1.2.0
  * http://www.noindoin.com/
  *
  * Copyright 2015 Jiang Fengming <fenix@noindoin.com>
@@ -198,3 +198,7 @@ var validator = {
     }).join(' ');
   }
 };
+
+// CommonJS
+if (typeof module != 'undefined' && module.exports)
+  module.exports = validator;
