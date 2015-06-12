@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="validator.js"></script>
+  </head>
+
+  <body>
+    <form class="form1">
+      <input type="text" required name="email">
+    </form>
+    <script>
+    validator.set('.form1', {
+      inputs: {
+        email: function(v) {
+          var error;
+          if (this.validity.valueMissing)
+            error = 'Please fill in your email address';
+          else if (v && !/^[a-z0-9](?:[-_\.\+]?[a-z0-9]+)*@(?:[a-z0-9](?:-?[a-z0-9]+)*\.)+[a-z]+$/i.test(v))
+            error = 'Invalid Email Address';
+          return error || true;
+        }
+      }
+    });
+    </script>
+  </body>
+</html>
