@@ -1,5 +1,5 @@
 /*!
- * validator.js v1.2.0
+ * validator.js v1.2.1
  * http://www.noindoin.com/
  *
  * Copyright 2015 Jiang Fengming <fenix@noindoin.com>
@@ -50,6 +50,10 @@ var validator = {
         setTimeout(function() {
           validator.checkInput(self, 'leave');
         });
+      });
+
+      input.addEventListener('change', function() {
+        validator.checkInput(this, 'leave');
       });
 
       input.addEventListener('blur', function() {
